@@ -9,7 +9,8 @@ import MaxWidthWrapper from './MaxWidth';
 export default function Hero() {
   return (
     <MaxWidthWrapper maxWidth='2xl'>
-    <section id="home" className="relative bg-white">
+      
+    <section id="home" className="relative">
       <div className="mx-auto relative h-screen">
         <div className="flex flex-col gap-24 lg:flex-row items-center justify-between h-full">
           <motion.div

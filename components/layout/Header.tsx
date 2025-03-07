@@ -37,6 +37,14 @@ function Navbar({ className }: { className?: string }) {
         {/* Menu */}
         <div className="flex-1 flex justify-center">
           <Menu setActive={setActive}>
+            <MenuItem setActive={setActive} active={active} item="About Us" className="text-neutral-800">
+              <div className="flex flex-col space-y-4 text-sm text-neutral-800">
+                <HoveredLink href="/web-dev">Web Development</HoveredLink>
+                <HoveredLink href="/interface-design">Interface Design</HoveredLink>
+                <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
+                <HoveredLink href="/branding">Branding</HoveredLink>
+              </div>
+            </MenuItem>
             <MenuItem setActive={setActive} active={active} item="Services" className="text-neutral-800">
               <div className="flex flex-col space-y-4 text-sm text-neutral-800">
                 <HoveredLink href="/web-dev">Web Development</HoveredLink>
@@ -45,7 +53,7 @@ function Navbar({ className }: { className?: string }) {
                 <HoveredLink href="/branding">Branding</HoveredLink>
               </div>
             </MenuItem>
-            <MenuItem setActive={setActive} active={active} item="Products" className="text-neutral-800">
+            <MenuItem setActive={setActive} active={active} item="Blogs" className="text-neutral-800">
               <div className="text-sm grid grid-cols-2 gap-10 p-4">
                 <ProductItem
                   title="Algochurn"
@@ -73,7 +81,16 @@ function Navbar({ className }: { className?: string }) {
                 />
               </div>
             </MenuItem>
-            <MenuItem setActive={setActive} active={active} item="Pricing" className="text-neutral-800">
+            <MenuItem setActive={setActive} active={active} item="Team" className="text-neutral-800">
+              <div className="flex flex-col space-y-4 text-sm text-neutral-800">
+                <HoveredLink href="/web-dev">Web Development</HoveredLink>
+                <HoveredLink href="/interface-design">Interface Design</HoveredLink>
+                <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
+                <HoveredLink href="/branding">Branding</HoveredLink>
+              </div>
+            </MenuItem>
+
+            <MenuItem setActive={setActive} active={active} item="Careers" className="text-neutral-800">
               <div className="flex flex-col space-y-4 text-sm text-neutral-800">
                 <HoveredLink href="/hobby">Hobby</HoveredLink>
                 <HoveredLink href="/individual">Individual</HoveredLink>
@@ -85,13 +102,13 @@ function Navbar({ className }: { className?: string }) {
         </div>
 
         {/* Book a Demo Button */}
-        <Link
-          href="/book-demo"
-          className="bg-electric-blue hover:bg-neutral-light text-white rounded-xl px-4 py-2 text-sm font-medium flex items-center space-x-1 transition-colors"
+        <button
+          onClick={() => window.location.href = '/book-demo'}
+          className="bg-[#0066FF] hover:bg-[#0052CC] text-white rounded-xl px-4 py-3 text-base font-medium flex items-center space-x-2 transition-colors"
         >
           <span>Get Started</span>
-          <ArrowRight className="w-4 h-4" />
-        </Link>
+          <ArrowRight className="w-5 h-5" />
+        </button>
       </div>
     </div>
   );

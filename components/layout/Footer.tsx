@@ -1,5 +1,6 @@
 import React from 'react';
 import { Diamond, Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import MaxWidthWrapper from '../MaxWidth';
 
 const quickLinks = [
   { name: 'Home', href: '#' },
@@ -29,16 +30,18 @@ const contactInfo = [
 
 export function Footer() {
   return (
-    <footer className="bg-primary-blue border-t border-electric-blue/10">
-      <div className="container mx-auto px-4">
+    <footer className="border-t border-electric-blue/10 bg-blue-100">
+    <MaxWidthWrapper maxWidth='2xl'>
+
+      <div className="mx-auto px-4">
         {/* Main Footer */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <Diamond className="w-6 h-6 text-electric-blue transform rotate-45" />
-              <span className="text-2xl font-bold tracking-tight">
-                Rapid<span className="text-electric-blue">X</span>.AI
+              <span className="text-2xl font-bold tracking-tight text-white">
+              logo
               </span>
             </div>
             <p className="text-gray-400 mb-6">
@@ -126,6 +129,8 @@ export function Footer() {
           </div>
         </div>
       </div>
+    </MaxWidthWrapper>
     </footer>
+
   );
 }

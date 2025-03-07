@@ -28,6 +28,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
+              {/* Grid Background */}
+      <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] before:bg-[size:4rem_4rem] before:opacity-">
+        <div className="absolute inset-0 bg-gradient-to-r from-white/50 to-transparent" />
+      </div>
         <NavbarDemo />
         {children}
       </body>
