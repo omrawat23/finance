@@ -66,35 +66,39 @@ export function Features2() {
           <p className="text-black/70">Comprehensive financial solutions tailored to your needs</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map((feature, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[0, 1].map((boxIndex) => (
             <motion.div
-              key={feature.title}
+              key={boxIndex}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: boxIndex * 0.1 }}
               className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-electric-blue/10 hover:border-electric-blue/30 transition-all duration-300"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-2 bg-electric-blue/10 rounded-lg">
-                  <IconComponent name={feature.iconName} />
-                </div>
-                <h3 className="text-xl font-semibold text-black">{feature.title}</h3>
-              </div>
-
-              <p className="text-black/70 mb-4">{feature.description}</p>
-              <ul className="space-y-2">
-                {feature.benefits.map((benefit, i) => (
-                  <li key={i} className="flex items-center text-sm text-black/80">
-                    <div className="w-1.5 h-1.5 rounded-full bg-electric-blue mr-2" />
-                    {benefit}
-                  </li>
+              {features
+                .slice(boxIndex * Math.ceil(features.length / 2), (boxIndex + 1) * Math.ceil(features.length / 2))
+                .map((feature, index) => (
+                  <div key={feature.title} className="mb-8">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="p-2 bg-electric-blue/10 rounded-lg">
+                        <IconComponent name={feature.iconName} />
+                      </div>
+                      <h3 className="text-xl font-semibold text-black">{feature.title}</h3>
+                    </div>
+                    <p className="text-black/70 mb-4">{feature.description}</p>
+                    <ul className="space-y-2">
+                      {feature.benefits.map((benefit, i) => (
+                        <li key={i} className="flex items-center text-sm text-black/80">
+                          <div className="w-1.5 h-1.5 rounded-full bg-electric-blue mr-2" />
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
             </motion.div>
           ))}
         </div>
-
       </MaxWidthWrapper>
     </section>
   );

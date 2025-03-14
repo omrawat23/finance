@@ -9,7 +9,7 @@ import MaxWidthWrapper from './MaxWidth';
 export default function Hero() {
   return (
     <MaxWidthWrapper maxWidth='2xl'>
-      
+
     <section id="home" className="relative">
       <div className="mx-auto relative h-screen">
         <div className="flex flex-col gap-24 lg:flex-row items-center justify-between h-full">
@@ -38,18 +38,22 @@ export default function Hero() {
                 Transforming financial insights into actionable strategies for sustainable growth and success.
               </p>
 
-              <div className="flex items-center gap-6 pt-4">
-                <motion.button
+              <div className="flex items-center gap-6 pt-">
+                  <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="glow-button bg-electric-blue text-white px-8 py-4 rounded-full text-base font-semibold inline-flex items-center shadow-lg shadow-electric-blue/20 hover:shadow-electric-blue/30 transition-all duration-300"
-                >
-                  Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
-                </motion.button>
-                <button className="text-white/80 hover:text-white transition-colors duration-200">
-                  Learn more →
-                </button>
-              </div>
+                  className="bg-electric-blue text-white px-8 py-4 rounded-full text-base font-semibold inline-flex items-center shadow-lg shadow-electric-blue/20 hover:shadow-electric-blue/30 transition-all duration-300"
+                  >
+                  Know more <ArrowRight className="ml-2 h-5 w-5" />
+                  </motion.button>
+                  <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="border-2 border-electric-blue text-electric-blue px-8 py-4 rounded-full text-base font-semibold inline-flex items-center hover:bg-electric-blue/10 transition-all duration-300"
+                  >
+                  Learn more <ArrowRight className="ml-2 h-5 w-5" />
+                  </motion.button>
+                </div>
             </div>
           </motion.div>
 
